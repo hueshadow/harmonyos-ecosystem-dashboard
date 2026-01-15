@@ -1,0 +1,5 @@
+{
+  "name": "HarmonyOS Ecosystem Dashboard",
+  "description": "A dark-themed, high-density dashboard monitoring the lifecycle, velocity, and health of the HarmonyOS application ecosystem.",
+  "requestFramePermissions": []
+}

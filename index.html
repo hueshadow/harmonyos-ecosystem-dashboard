@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HarmonyOS Ecosystem Monitor</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#3b82f6",
+              "accent": "#8b5cf6",
+              "background-main": "var(--bg-main)",
+              "surface": "var(--bg-card)",
+              "surface-highlight": "var(--bg-card-hover)",
+              "border-subtle": "var(--glass-border)",
+              "text-secondary": "var(--text-secondary)",
+              "success": "var(--accent-green)",
+              "danger": "var(--accent-red)",
+              "warning": "#f59e0b",
+              // Custom Dark/Gold Palette
+              "obsidian": "#050505",
+              "charcoal": "#0F0F10",
+              "graphite": "#1A1A1C",
+              "border": "rgba(255, 255, 255, 0.08)",
+            },
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+            backdropBlur: {
+              'xs': '2px',
+            },
+            backgroundImage: {
+              'ambient-glow': 'radial-gradient(circle at top left, rgba(76, 29, 149, 0.2) 0%, rgba(0, 0, 0, 0) 60%)',
+              'metallic': 'linear-gradient(145deg, #2a2a2a 0%, #151515 100%)',
+            },
+            boxShadow: {
+              'glass-inset': 'inset 0 1px 0 0 rgba(255, 255, 255, 0.05)',
+              'neon-green': '0 0 10px rgba(16, 185, 129, 0.3)',
+            }
+          },
+        },
+      }
+    </script>
+    <style>
+      :root {
+        /* --- Core: OLED Black --- */
+        --bg-main: #050505;
+        --bg-sidebar: rgba(10, 10, 10, 0.6);
+        --bg-card: #0F0F10;
+        --bg-card-hover: #1A1A1C;
+
+        /* --- Glass & Borders --- */
+        --glass-border: rgba(255, 255, 255, 0.08);
+        --glass-shine: rgba(255, 255, 255, 0.03);
+        --glass-blur: 20px;
+
+        /* --- Typography --- */
+        --text-primary: #FFFFFF;
+        --text-secondary: #9CA3AF;
+        --text-tertiary: #4B5563;
+
+        /* --- Accents --- */
+        --accent-green: #10B981;
+        --accent-red: #EF4444;
+
+        /* --- Ambient Glow --- */
+        --glow-ambient: radial-gradient(circle at 0% 0%, rgba(76, 29, 149, 0.15) 0%, rgba(0, 0, 0, 0) 50%);
+      }
+
+      body {
+        background-color: var(--bg-main);
+        background-image: var(--glow-ambient);
+        background-attachment: fixed;
+        color: var(--text-primary);
+        font-family: 'Inter', -apple-system, sans-serif;
+      }
+
+      /* Custom Scrollbar - Minimalist */
+      ::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: transparent; 
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #333; 
+        border-radius: 10px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #555; 
+      }
+      
+      .glass-panel {
+        background: var(--bg-card);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid var(--glass-border);
+      }
+      
+      .sidebar-glass {
+        background: linear-gradient(180deg, rgba(10,10,10,0.8) 0%, rgba(5,5,5,0.95) 100%);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border-right: 1px solid rgba(255, 255, 255, 0.03);
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "recharts": "https://esm.sh/recharts@^3.6.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="./index.tsx"></script>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
